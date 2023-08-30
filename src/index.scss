@@ -1,0 +1,273 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.conversations {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  height: 100%;
+  border-right: 1px solid grey;
+  background-color: #F0F0F0;
+  padding: 10px;
+  overflow-y: auto;
+
+  gap: 10px;
+  .searchbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    img {
+      height: 20px;
+      position: absolute;
+      left: 5px;
+      color: grey;
+      cursor: pointer;
+    }
+
+    .search {
+      border: none;
+      outline: none;
+      background-color: white;
+      height: 35px;
+      width: 100%;
+      padding: 10px 10px 10px 30px;
+    }
+  }
+
+  .add-conversation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    img {
+      height: 20px;
+      object-fit: cover;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .chatlist {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .chat {
+      display: flex;
+      padding: 10px;
+      gap: 10px;
+      height: 60px;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        height: 50px;
+        object-fit: contain;
+        border-radius: 50% ;
+      }
+
+      .chat-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .chat-heading {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .chat-content {
+          font-size: 14px;
+          font-weight: lighter;
+        }
+      }
+
+      &:hover {
+        background-color:  	#E5E4E2;
+      }
+    }
+  }
+}
+
+.messages {
+  width: 100%;
+}
+
+.navbar {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #E8E8E8;
+  gap: 20px;
+  padding: 10px;
+
+
+  img {
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.message {
+  background-color: #F0F8FF;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.single-message {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  img {
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    padding: 10px;
+    height: 30px;
+    width: max-content;
+    border-radius: 0 5px 5px 5px;
+
+    //&.owner {
+    //  flex-direction: row-reverse;
+    //  background-color: lightblue;
+    //  border-radius: 5px 0 5px 5px;
+    //}
+  }
+
+  &.owner {
+    flex-direction: row-reverse;
+    div {
+        background-color: lightblue;
+        border-radius: 5px 0 5px 5px;
+    }
+  }
+}
+
+.input-section {
+  width: 100%;
+  height: 11%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  textarea {
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+    resize: none;
+    border: 1px solid grey;
+    outline: none;
+    border-radius: 10px;
+
+    &:focus {
+      border: 2px solid pink;
+    }
+  }
+
+  .send-button {
+    width: 5%;
+    height: 100%;
+    background-color: #00BFFF;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+
+    &:hover {
+      background-color: #4B9CD3;
+
+    }
+
+
+  }
+}
+
+.empty {
+  width: 100%;
+  background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-list {
+  position: absolute;
+  top: 125px;
+  left: 500px;
+  height: 300px;
+  width: 300px;
+  background-color: #DBE9F4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  overflow-y: auto;
+  border-radius: 10px;
+
+  h4 {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+  }
+
+  .ind-contact {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+
+    img {
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    span {
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: pink;
+    }
+  }
+}
